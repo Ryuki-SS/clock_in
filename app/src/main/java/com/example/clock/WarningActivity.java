@@ -2,6 +2,7 @@ package com.example.clock;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -26,6 +27,7 @@ public class WarningActivity extends BaseActivity {
     RecyclerView recyclerView;
     WarningAdapter adapter;
     ReportService reportService;
+    TextView nowTimeView;
 
     @Override
     public int getLayoutId() {
@@ -35,6 +37,7 @@ public class WarningActivity extends BaseActivity {
     @Override
     public void initViews(Bundle savedInstanceState) {
         recyclerView = findViewById(R.id.recycker_view);
+        nowTimeView = findViewById(R.id.time_now);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         initNetWorkUtil();
 
@@ -42,7 +45,9 @@ public class WarningActivity extends BaseActivity {
         recyclerView.setAdapter(adapter);
 
         Intent intent = getIntent();
-        String timeAndIshealthy = intent.getStringExtra("nowTime") + ",是";
+        String nowTime = intent.getStringExtra("nowTime");
+        nowTimeView.setText(nowTime);
+        String timeAndIshealthy = nowTime + ",是";
         getWarningInfo(timeAndIshealthy);
 
     }
