@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  tools:context=".HistoryActivity">
+  <androidx.appcompat.widget.Toolbar
+      android:id="@+id/toolbar"
+      android:layout_width="match_parent"
+      android:layout_height="?actionBarSize"
+      android:background="#68DEAE"
+      app:navigationIcon="@color/colorNull">
+    <TextView
+        android:id="@+id/toolbarTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="打   卡   记   录"
+        android:textAppearance="@android:style/TextAppearance.WindowTitle"
+        android:textSize="25sp"
+        android:visibility="visible" />
+  </androidx.appcompat.widget.Toolbar>
+
+  <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/recycker_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGray" />
+
+
+</LinearLayout>
