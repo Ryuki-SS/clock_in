@@ -3,9 +3,7 @@ package com.example.clock;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Log;
-import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
 
@@ -28,7 +26,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import com.example.clock.utils.ToastUtil;
 
 import org.litepal.LitePal;
-import org.litepal.crud.LitePalSupport;
 
 public class LoginActivity extends BaseActivity {
 
@@ -36,8 +33,8 @@ public class LoginActivity extends BaseActivity {
     TextInputEditText edtAccount;
     @BindView(R.id.edt_password)
     TextInputEditText edtPassword;
-    @BindView(R.id.tv_login)
-    TextView tvLogin;
+    @BindView(R.id.cv_login)
+    CardView cvLogin;
     @BindView(R.id.card_input)
     CardView cardInput;
 
@@ -58,7 +55,7 @@ public class LoginActivity extends BaseActivity {
     }
 
     private void initClick() {
-        tvLogin.setOnClickListener(v -> {
+        cvLogin.setOnClickListener(v -> {
             String account = edtAccount.getText().toString();
             String password = edtPassword.getText().toString();
             login(account, password);
