@@ -152,18 +152,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         }
     }
 
-
-    private void initIntent() {
-       /* Intent intent = getIntent();
-        userBean = new UserBean.DataBean();
-        String nickname = intent.getStringExtra("nickname");
-        String avatar = intent.getStringExtra("avatar");
-        if (nickname != null && !nickname.isEmpty() && avatar != null && !avatar.isEmpty()){
-            userBean.setNickname(nickname);
-            userBean.setAvatar(avatar);
-        }*/
-    }
-
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -184,7 +172,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 }
             });
         } else if (v.getId() == R.id.report_container_cardView) {
-            saveBeanAndReport();
+            String isSick = patientSelectTextView.getText().toString();
+            if (isSick.equals("待选择")){
+                ToastUtil.show("请选择健康情况！");
+            }else {
+                saveBeanAndReport();
+            }
         } else if (v.getId() == R.id.history_textView) {
             turn2History();
         } else if (v.getId() == R.id.warning_cardview) {
@@ -209,10 +202,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     }
 
     private void saveBeanAndReport(){
-//        ReportBean reportBean = LitePal.find(ReportBean.class,1);
-//        if (reportBean == null){
-//            reportBean = new ReportBean();
-//        }
         String idS = idTextView.getText().toString();
         int id = Integer.parseInt(idS);
         String name = nameTextView.getText().toString();
@@ -259,9 +248,16 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                     @Override
                     public void onNext(PostBackBean postBackBean) {
                         if (postBackBean.getRet() == 200){
-                            ToastUtil.show("打卡成功！");
-                            setReportState(true);
+                            if (postBackBean.getData().getErr_code() == 0){
+                                ToastUtil.show("打卡成功！");
+                                setReportState(true);
+                            }else {
+                                ToastUtil.show("请填写所有带*条目！");
+                            }
+                        }else {
+                            ToastUtil.show("网络请求失败！");
                         }
+
                     }
 
                     @Override

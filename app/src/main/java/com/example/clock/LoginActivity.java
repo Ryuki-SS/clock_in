@@ -26,7 +26,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import com.example.clock.utils.ToastUtil;
 
 import org.litepal.LitePal;
-
 public class LoginActivity extends BaseActivity {
 
     @BindView(R.id.edt_account)

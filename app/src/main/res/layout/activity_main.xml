@@ -206,7 +206,7 @@
                                     android:layout_alignParentEnd="true"
                                     android:backgroundTint="@color/colorNull"
                                     android:textColor="#CA0f1f0f"
-                                    android:gravity="center_vertical"
+                                    android:gravity="center_vertical|end"
                                     android:textSize="18sp"
                                     android:paddingTop="0dp"
                                     android:paddingEnd="0dp"
@@ -320,8 +320,8 @@
                                     />
                                 <EditText
                                     android:id="@+id/detail_location_Edittext"
-                                    android:layout_width="200dp"
                                     android:layout_height="match_parent"
+                                    android:layout_width="180dp"
                                     android:singleLine="true"
                                     tools:text="重庆市南岸区重庆邮电大学"
                                     android:layout_alignParentEnd="true"
@@ -361,13 +361,13 @@
                                     />
                                 <EditText
                                     android:id="@+id/extras_edittext"
-                                    android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
-                                    android:text=""
+                                    android:layout_width="180dp"
+                                    android:singleLine="true"
                                     android:layout_alignParentEnd="true"
                                     android:backgroundTint="@color/colorNull"
                                     android:textColor="#CA0f1f0f"
-                                    android:gravity="center_vertical"
+                                    android:gravity="center_vertical|end"
                                     android:textSize="18sp"
                                     android:hint="填写其他需要说明的情况"
                                     android:paddingTop="0dp"
