@@ -7,8 +7,6 @@ import com.example.clock.bean.ReportHistoryBean;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 
@@ -29,5 +27,6 @@ public class HistoryAdapter extends BaseQuickAdapter<ReportHistoryBean.DataBean.
                 .setText(R.id.text_location,itemsBean.getAddress())
                 .setText(R.id.text_time,itemsBean.getTime());
     }
-
 }
+
+

@@ -57,13 +57,14 @@
                     android:textColor="@color/colorGray2" />
                 <TextView
                     android:id="@+id/text_location"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
+                    android:maxLines="2"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:layout_alignParentEnd="true"
                     android:layout_below="@id/text_name"
                     android:textSize="18dp"
-                    android:gravity="center_vertical"
+                    android:gravity="center_vertical|end"
                     tools:text="重庆市重庆市南岸区" />
                 <TextView
                     android:id="@+id/tip_temperature"

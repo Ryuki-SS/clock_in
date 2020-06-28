@@ -241,7 +241,7 @@
                                     android:id="@+id/patient_select_textView"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
-                                    android:text="请选择"
+                                    android:text="待选择"
                                     android:drawableEnd="@mipmap/next"
                                     android:layout_alignParentEnd="true"
                                     android:backgroundTint="@color/colorNull"

@@ -71,11 +71,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     @Override
     public void initViews(Bundle savedInstanceState) {
         Bugly.init(this, "32d45c257c", true);
-        initView();
-        initOldData();
-        initTimeText();
-        initNetWorkUtil();
-        checkHasReported();
+        initView();          /*初始化界面，设置点击事件。*/
+        initOldData();       /*初始化老数据，检查本地存储是否有打卡后存储的数据，有就进行自动填写。*/
+        initTimeText();      /*初始化时间显示组件，获取当天日期*/
+        initNetWorkUtil();   /*初始化网络工具*/
+        checkHasReported();  /*检查是否打卡*/
     }
 
     private void initView(){
@@ -94,9 +94,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         extrasContainer = findViewById(R.id.extras_container);
         deadLineTextView = findViewById(R.id.deadline_textView);
         warningCardView = findViewById(R.id.warning_cardview);
-
-
-
 
         phoneContainer.setOnClickListener( v -> showInputMethod(phoneEditText));
         detailLocContainer.setOnClickListener( v -> showInputMethod(detailLocEditText));
@@ -257,7 +254,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                         }else {
                             ToastUtil.show("网络请求失败！");
                         }
-
                     }
 
                     @Override
@@ -342,7 +338,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     interface SelectCallBack {
         void onSelected(int pos, String[] items);
     }
-
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
