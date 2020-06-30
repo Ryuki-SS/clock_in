@@ -139,6 +139,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             }
             if (reportBean.getIshealthy() != null){
                 patientSelectTextView.setText(reportBean.getIshealthy());
+                if (reportBean.getIshealthy().equals("是")){
+                    patientSelectTextView.setTextColor(Color.RED);
+                }
             }
             if (reportBean.getTemperature() != null){
                 temperatureEditText.setText(reportBean.getTemperature());
